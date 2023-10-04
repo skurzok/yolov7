@@ -1,7 +1,8 @@
 
 # setup enviriment
 
-```wget https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7.pt
+```
+wget https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7.pt
 virtualenv -p python3.10 venv
 source venv/bin/activate
 ```
