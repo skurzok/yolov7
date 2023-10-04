@@ -16,6 +16,7 @@ import torch.backends.cudnn as cudnn
 import torch.nn as nn
 import torch.nn.functional as F
 import torchvision
+from time import perf_counter as timer
 
 try:
     import thop  # for FLOPS computation
@@ -87,10 +88,8 @@ def select_device(device='', batch_size=None):
 
 
 def time_synchronized():
-    # pytorch-accurate time
-    if torch.cuda.is_available():
-        torch.cuda.synchronize()
-    return time.time()
+    return timer()
+
 
 
 def profile(x, ops, n=100, device=None):
